@@ -26,6 +26,7 @@ def process_new_sentence(s):
 		resultword[word] += 1
 
 def compute_tf(s):
+	'''	
 	bow = set()
 	# dictionary for words in the given sentence (document)
 	wordcount_d = {}
@@ -36,10 +37,10 @@ def compute_tf(s):
 			wordcount_d[tok]=0
 		wordcount_d[tok] += 1
 		bow.add(tok)
-
+	'''
 	tf_d = {}
-	for word,count in wordcount_d.items():
-		tf_d[word] = count / float(len(bow))
+	for word,count in word_d.items():
+		tf_d[word] = count / float(len(word_d))
 
 	return tf_d
 
@@ -47,15 +48,16 @@ def compute_idf():
 #	Dval = len(sent_list)
 	Dval = len(word_d)
 	# build set of words
+	'''	
 	bow = set()
 
 	for i in range(0, len(sent_list)):
 		tokenized = word_tokenize(sent_list[i])
 		for tok in tokenized:
 			bow.add(tok)
-
+	'''
 	idf_d = {}
-	for t in bow:
+	for t in word_d:
 		cnt = 0
 		for s in sent_list:
 			if t in word_tokenize(s):
@@ -79,7 +81,7 @@ if __name__ == '__main__':
 	url5 = u'https://finance.naver.com/news/news_read.nhn?article_id=0000706150&office_id=417&mode=RANK&typ=0'
 	url6 = u'https://finance.naver.com/news/news_read.nhn?article_id=0004962515&office_id=018&mode=RANK&typ=0'
 
-	ulist = [url1, url2, url3, url4, url5, url6]
+	ulist = [url1, url2, url3, url4, url5]
 	res = []
 	for i in range(0, len(ulist)):
 		res.append(requests.get(ulist[i]))
@@ -115,22 +117,16 @@ if __name__ == '__main__':
 #			wlist = okt.nouns(hsent)
 			wlist = mecab.nouns(hsent) # NNG보다 NNP 추출 해보기
 #			print(wlist)
-			for i in range(0,len(wlist)):
-#				process_new_sentence(wlist[i])
-				sent_list.append(wlist[i])
+#			for i in range(0,len(wlist)):
+#				sent_list.append(wlist[i])
 			for w in wlist:
-				mw = mecab.pos(hsent)
-				if w not in word_d:
+				mw = mecab.pos(w)
+				if w not in word_d and mw[0][1] == "NNP":
 					word_d[w] = 0
-				elif mw[1] == "NNP":
+					sent_list.append(w)
+				elif mw[0][1] == "NNP":
 					word_d[w] += 1
-			'''
-			for w in wlist:
-				if w not in word_d:
-					word_d[w] = 0
-				else:
-					word_d[w] += 1
-			'''
+
 	temp = {}
 
 	idf_d = compute_idf()
@@ -144,12 +140,12 @@ if __name__ == '__main__':
 	wordsave = []
 	
 	for w,c in sorted(temp.items(), key=lambda x:x[1], reverse=True):
-		if len(w) >= 2:
+		if len(w) >= 3:
 			important_word[w] = c
 			wordsave.append(w)
 	
-	for i in range(0, len(wordsave)):
-		print(mecab.pos(wordsave[i]))
+#	for i in range(0, len(wordsave)):
+#		print(mecab.pos(wordsave[i]))
 
 	icnt = 0
 	for w,c in important_word.items():
@@ -158,4 +154,3 @@ if __name__ == '__main__':
 		else:
 			icnt += 1
 			print(w,c)
-
