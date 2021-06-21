@@ -1,0 +1,10 @@
+
+#받아온 이미지(그래프)를 출력하는 html
+<html>
+  <head>
+    <title>{{ title }} - image</title>
+  </head>
+  <body>
+    <img src="{{ url_for('fig', cropzonekey = title) }}" alt="Image Placeholder" height="600">
+  </body>
+</html>
