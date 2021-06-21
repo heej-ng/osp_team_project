@@ -1,0 +1,42 @@
+#!/usr/bin/python3
+#-*- coding: utf-8 -*-
+import sys
+import re
+import requests
+from bs4 import BeautifulSoup
+from elasticsearch import Elasticsearch
+import pandas as pd
+
+# 2. 웹 크롤링
+# 2021년 1월 7일, 네이버가 웹크롤링 차단 실시
+# 네이버 금융서버에서 http 패킷 헤더의 웹 브라우저 정보(User-agent)를 체크
+# 웹 브라우저 정보를 함께 전송해야 한다.
+url = 'https://finance.naver.com/item/sise_day.nhn?code=005930&page=1'
+with requests.get(url, headers={'User-agent': 'Mozilla/5.0'}) as doc: # <== 이처럼 브라우저 정보를 requests 모듈을 이용해 전송해야 한다.
+    html = BeautifulSoup(doc.text, "lxml")
+    pgrr = html.find('td', class_='pgRR')
+    s = str(pgrr.a['href']).split('=')
+    last_page = s[-1]
+    #print(last_page)
+
+date=[]
+price=[]
+sise_url = 'https://finance.naver.com/item/sise_day.nhn?code=005930'
+# for page in range(1, int(last_page)+1):
+for page in range(1, 100):
+    page_url = '{}&page={}'.format(sise_url, page)
+    response_page = requests.get(page_url, headers={'User-agent': 'Mozilla/5.0'}).text
+    html = BeautifulSoup(response_page, 'html.parser')
+    main = html.find('table', {'class': 'type2'})
+    main0 = main.find_all('tr', {'onmouseover': 'mouseOver(this)'})
+    for i in range(len(main0)):
+        d=main0[i].find('td', {'align':'center'})
+        p=main0[i].find('td', {'class':'num'})
+
+        date.append(d.get_text())
+        price.append(p.get_text())
+
+print(date)
+print('---------------')
+print(price)
+
