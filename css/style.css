@@ -114,7 +114,7 @@ a:hover {
 .hero {
   display: table;
   position: relative;
-  background-image: url(img/주식사진1.jpeg);
+  background-image: url(../img/주식사진1.jpeg);
   background-size: cover;
   padding: 150px 0;
   color: #fff;
