@@ -59,8 +59,9 @@ def day_stock_crawling(code):
     print(res)
 
 
-if __name__== '__main__':
+def stock_crawling():
     #for i in range(len(company_code)):
     for i in range(0,20):
         day_stock_crawling(company_code[i])
+
 
