@@ -50,7 +50,9 @@ def detail(stock):
     s1 = soup.find(class_="no_up").find(class_="blind").text
 
     #전일대비
-    s2 = soup.find(class_="no_exday").find_all(class_="no_up")  # .find(class_="blind") ##.find(class_="no_up").
+    s2 = soup.find(class_="no_exday").find_all(class_="no_up")
+    if (len(s2) == 0):
+        s2 = soup.find(class_="no_exday").find_all(class_="no_down")
     s2 = s2[1].get_text().split()
     s2 = s2[0] + s2[1] + s2[3]
 
@@ -69,43 +71,16 @@ def detail(stock):
 
     return render_template("detail.html", title=stock, d1=s1, d2=s2, d3=s3, d4=s4, d5=s5, d6=s6)
 
-
-# 한글, 영어 구분; 한글 -> 'k', 영어 ->'e'
-def isEnglishOrKorean(input_s):
-    k_count = 0
-    e_count = 0
-    for c in input_s:
-        if ord('가') <= ord(c) <= ord('힣'):
-            k_count += 1
-        elif ord('a') <= ord(c.lower()) <= ord('z'):
-            e_count += 1
-    return "k" if k_count > 1 else "e"
-
-
 # 한국기업은 기업명, 미국기업은 티커 입력 -> symbol, name
 def stock_code(val):
-    if isEnglishOrKorean(val) == 'e':
-        df_nsq = fdr.StockListing('LASDAQ')
-        df_nyse = fdr.StockListing('NYSE')
-        df_us = pd.concat([df_nsq, df_nyse])
-        df_name = df_us[df_us['Symbol'] == val]
-        symbol = df_name.iloc[0, 0]
-        name = df_name.iloc[0, 1]
-    else:
-        df_krx = fdr.StockListing('KRX')
-        # print(df_krx)
-        df_name = df_krx[df_krx['Name'] == val]
-        symbol = df_name.iloc[0, 0]
-        name = df_name.iloc[0, 2]
-
+    df_krx = fdr.StockListing('KRX')
+    df_name = df_krx[df_krx['Name'] == val]
+    symbol = df_name.iloc[0, 0]
+    name = df_name.iloc[0, 2]
     return symbol, name
-
 
 @app.route('/fig/<stock>')
 def fig(stock):
-    # print("fig!!!!!!!!!!!!!!!!!!!!!!!!!!!!!hi")
-
-    # title = stock_code('카카오')[1] + '(' + stock_code('카카오')[0] + ')'
     df = fdr.DataReader(stock_code(stock)[0], '2019')
     print(df)
     df['Close'].plot()
