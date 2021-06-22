@@ -40,7 +40,7 @@ def news_issue():
 	wlist = {}
 	tf_list = []
 	tfcount = 0
-	mecab = Mecab()
+#	mecab = Mecab()
 	okt = Okt()
 
 	for i in range(2): #오늘 많이 본 기사 끌어오기
