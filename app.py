@@ -143,3 +143,4 @@ def fig(stock):
 if __name__ == '__main__':
     ipaddr = "127.0.0.1"
     app.run(debug=False, host=ipaddr, port=5000)
+
