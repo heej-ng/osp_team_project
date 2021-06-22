@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="utf-8">
-  <title>Bell Bootstrap 4 Theme</title>
+  <title>Stock Trading Tool</title>
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
   <meta content="" name="keywords">
   <meta content="" name="description">
@@ -50,7 +50,7 @@
     ================================================== -->
   <!-- Hero -->
 
-  <section class="hero">
+  <section class="hero" id="hero">
     <div class="container text-center">
       <div class="row">
         <div class="col-md-12">
@@ -61,7 +61,7 @@
       <div class="col-md-12">
         <h1>
             주식 분석 사이트
-          </h1>
+        </h1>
 
         <p class="tagline">
           주식 분석 사이트
@@ -77,17 +77,17 @@
     <div class="container">
 
       <div id="logo" class="pull-left">
-        <a href="index.html"><img src="../static/img/logo-nav.png" alt="" title="" /></img></a>
+        <img src="../static/img/logo-nav.png" alt="" title="" /></img>
         <!-- Uncomment below if you prefer to use a text image -->
         <!--<h1><a href="#hero">Bell</a></h1>-->
       </div>
 
       <nav id="nav-menu-container">
         <ul class="nav-menu">
-          <li><a href="#features">인기 검색 종목</a></li>
-          <li><a href="#portfolio">종목 추천</a></li>
-          <li><a href="#about">증권 이슈</a></li>
-          <li><a href="#team">팀 소개</a></li>
+          <li><a href="#features"><b>인기 검색 종목</b></a></li>
+          <li><a href="#portfolio"><b>종목 추천</b></a></li>
+          <li><a href="#about"><b>증권 이슈</b></a></li>
+          <li><a href="#team"><b>팀 소개</b></a></li>
         </ul>
     </div>
   </header>
@@ -100,22 +100,24 @@
         Welcome to "Stock Trading Tool"
     </h2>
 
-    <p>
-      간단한 소개 문장
-    </p>
-
     <div class="container">
       <div class="row">
         <div class="feature-col col-lg-4 col-xs-12">
-          <p>인기 검색 종목 소개</p>
+          <img class="infoimg" src = "../static/img/ranking.png">
+          <p><b>인기 검색 종목</b></p>
+          <p>: 소개내용</p>
         </div>
 
         <div class="feature-col col-lg-4 col-xs-12">
-          <p>종목 추천 소개</p>
+          <img class="infoimg" src = "../static/img/recommend.png">
+          <p><b>종목 추천</b></p>
+          <p>: 소개내용</p>
         </div>
 
         <div class="feature-col col-lg-4 col-xs-12">
-          <p>증권 이슈 소개</p>
+          <img class="infoimg" src = "../static/img/news.png">
+          <p><b>증권 이슈</b></p>
+          <p>: 소개내용</p>
         </div>
       </div>
     </div>
@@ -131,8 +133,22 @@
       </h2>
 
       <p>인기 종목 리스트 출력</p>
-      <p>{{popular_list}}</p>
-      <br><br><br><br><br><br><br><br><br><br>
+      <p>{{p0}}<br>
+        {{p1}}<br>
+        {{p2}}<br>
+        {{p3}}<br>
+        {{p4}}<br>
+        {{p5}}<br>
+        {{p6}}<br>
+        {{p7}}<br>
+        {{p8}}<br>
+        {{p9}}<br>
+        {{p10}}<br>
+        {{p11}}<br>
+        {{p12}}<br>
+        {{p13}}<br>
+        {{p14}}<br>
+        {{p15}}<br></p>​
 
     </div>
   </section>
@@ -186,19 +202,16 @@
       <div class="row">
         <div class="col-sm-3 col-xs-6">
           <div class="card card-block">
-            <a href="#"><img alt="" class="team-img" src="../static/img/zladb.jpg">
+            <a href="#team"><img alt="" class="team-img" src="../static/img/zladb.jpg">
               <div class="card-title-wrap">
                 <span class="card-title">김유진</span> <span class="card-text">2020112757</span>
               </div>
 
               <div class="team-over">
+                <img class="emailimg" src="../static/img/email.png">
                 <h4 class="hidden-md-down">
-                  소개?
+                  zla_db@naver.com
                 </h4>
-
-            <p>
-              Lorem ipsum dolor sit amet, eu sed suas eruditi honestatis.
-            </p>
           </div>
           </a>
         </div>
@@ -206,19 +219,16 @@
 
       <div class="col-sm-3 col-xs-6">
         <div class="card card-block">
-          <a href="#"><img alt="" class="team-img" src="../static/img/knutaehyung.jpg">
+          <a href="#team"><img alt="" class="team-img" src="../static/img/knutaehyung.jpg">
               <div class="card-title-wrap">
                 <span class="card-title">김태형</span> <span class="card-text">2020116366</span>
               </div>
 
               <div class="team-over">
+                <img class="emailimg" src="../static/img/email.png">
                 <h4 class="hidden-md-down">
-                  ...
+                  mrkim2686@naver.com
                 </h4>
-
-          <p>
-            Lorem ipsum dolor sit amet, eu sed suas eruditi honestatis.
-          </p>
         </div>
         </a>
       </div>
@@ -226,19 +236,16 @@
 
     <div class="col-sm-3 col-xs-6">
       <div class="card card-block">
-        <a href="#"><img alt="" class="team-img" src="../static/img/jjunii.png">
+        <a href="#team"><img alt="" class="team-img" src="../static/img/jjunii.png">
               <div class="card-title-wrap">
                 <span class="card-title">박준희</span> <span class="card-text">2020113873</span>
               </div>
 
               <div class="team-over">
+                <img class="emailimg" src="../static/img/email.png">
                 <h4 class="hidden-md-down">
-                  ...
+                  wnslii@knu.ac.kr
                 </h4>
-
-        <p>
-          Lorem ipsum dolor sit amet, eu sed suas eruditi honestatis.
-        </p>
       </div>
       </a>
     </div>
@@ -246,19 +253,16 @@
 
     <div class="col-sm-3 col-xs-6">
       <div class="card card-block">
-        <a href="#"><img alt="" class="team-img" src="../static/img/heej-ng.png">
+        <a href="#team"><img alt="" class="team-img" src="../static/img/heej-ng.png">
               <div class="card-title-wrap">
                 <span class="card-title">박희중</span> <span class="card-text">2020110007</span>
               </div>
 
               <div class="team-over">
+                <img class="emailimg" src="../static/img/email.png">
                 <h4 class="hidden-md-down">
-                  ...
+                  hejung@knu.ac.kr
                 </h4>
-
-        <p>
-          Lorem ipsum dolor sit amet, eu sed suas eruditi honestatis.
-        </p>
       </div>
       </a>
     </div>
@@ -266,19 +270,16 @@
 
     <div class="col-sm-3 col-xs-6">
       <div class="card card-block">
-        <a href="#"><img alt="" class="team-img" src="../static/img/OreoFlavor.png">
+        <a href="#team"><img alt="" class="team-img" src="../static/img/OreoFlavor.png">
               <div class="card-title-wrap">
                 <span class="card-title">오성식</span> <span class="card-text">2020112102</span>
               </div>
 
               <div class="team-over">
+                <img class="emailimg" src="../static/img/email.png">
                 <h4 class="hidden-md-down">
-                  ...
+                  oh010224@knu.ac.kr
                 </h4>
-
-        <p>
-          Lorem ipsum dolor sit amet, eu sed suas eruditi honestatis.
-        </p>
       </div>
       </a>
     </div>
@@ -311,7 +312,7 @@
           <div class="col-lg-6 col-xs-12 text-lg-right text-center">
             <ul class="list-inline">
               <li class="list-inline-item">
-                <a href="index.html">Home</a>
+                <a href="#hero">Home</a>
               </li>
 
               <li class="list-inline-item">
