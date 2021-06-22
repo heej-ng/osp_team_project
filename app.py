@@ -86,7 +86,7 @@ def detail(stock):
     #시가총액순위
     s6 = siga[6] + ' ' + siga[7]
 
-    return render_template("detail.html", title=stock, d1=s1, d2=s2, d3=s3, d4=s4, d5=s5, d6=s6)
+    return render_template("detail.html", title=stock, name=stock_code(stock)[1], d1=s1, d2=s2, d3=s3, d4=s4, d5=s5, d6=s6)
 
 # 한국기업은 기업명, 미국기업은 티커 입력 -> symbol, name
 def stock_code(val):
