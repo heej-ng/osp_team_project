@@ -13,6 +13,9 @@ from io import StringIO, BytesIO
 import numpy as np
 from bs4 import BeautifulSoup
 
+from stock_crawling import *
+from recom_algo import *
+
 import matplotlib
 
 matplotlib.use('Agg')
@@ -37,6 +40,20 @@ def popular():
     return render_template('index.html', p0=list[0], p1=list[1], p2=list[2], p3=list[3], p4=list[4], p5=list[5],
                            p6=list[6], p7=list[7], p8=list[8], p9=list[9], p10=list[10], p11=list[11], p12=list[12],
                            p13=list[13], p14=list[14])
+
+@app.route('/crawling_stock', methods=['POST'])
+def crawling_stock():
+	stock_crawling()
+
+@app.route('/stable', methods=['POST'])
+def aver():
+	stable_list=recom_algo('stable')
+	return render_template('stable.html', stable=stable_list)
+
+@app.route('/attack', methods=['POST'])
+def aver():
+	danger_list=recom_algo('danger')
+	return render_template('attack.html', attack=danger_list)
 
 
 @app.route('/detail/<stock>')
