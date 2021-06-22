@@ -64,4 +64,3 @@ if __name__== '__main__':
     for i in range(0,20):
         day_stock_crawling(company_code[i])
 
-
