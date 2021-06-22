@@ -92,7 +92,7 @@ def danger_recommend_algo(res):
         print('rightdown')
         return 0
 
-if __name__== '__main__':
+def recom_algo(type):
     stable_list=[]
     danger_list=[]
     reco_list=[]
@@ -102,8 +102,14 @@ if __name__== '__main__':
             stable_list.append(company_name[i])
         if(danger_recommend_algo(list)):
             danger_list.append(company_name[i])
-    print('stable : ')
-    print(stable_list)
-    print('danger : ')
-    print(danger_list)
+    #print('stable : ')
+    #print(stable_list)
+    #print('danger : ')
+    #print(danger_list)
+
+    if(type=='stable'):
+        return stable_list
+    elif(type=='danger'):
+        return danger_list
+
 
