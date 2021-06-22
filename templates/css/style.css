@@ -153,7 +153,7 @@ a:hover {
 
 .tagline {
   font-family: "Raleway", Helvetica, Arial, sans-serif;
-  font-size: 26px;
+  font-size: 20px;
   margin: 45px 0 75px 0;
   color: #fff;
 }
@@ -519,7 +519,7 @@ body.mobile-nav-active #mobile-nav-toggle {
   Features Styling
   ================================================== */
 .features {
-  padding-bottom: 45px;
+  padding-bottom: 20px;
 }
 
 .features h2 {
@@ -563,6 +563,10 @@ body.mobile-nav-active #mobile-nav-toggle {
   font-size: 16px;
   color: black;
   margin-bottom: 10px;
+}
+
+.features .container {
+  text-align: center;
 }
 
 /* ==================================================
@@ -998,4 +1002,20 @@ body.mobile-nav-active #mobile-nav-toggle {
 .about h2{
   color: #199EB8;
   margin-bottom: 25px;
+}
+
+.features a:link {
+  color: black;
+}
+
+.features a:visited {
+  color: black;
+}
+
+.features a:hover {
+  color: #007bff;
+}
+
+.features a:active {
+  color: #007bff;
 }
