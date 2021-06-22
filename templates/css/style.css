@@ -601,7 +601,7 @@ body.mobile-nav-active #mobile-nav-toggle {
   ================================================== */
 .portfolio {
   background-color: #edf6ff;
-  padding-bottom: 0;
+  padding-bottom: 40px;
 }
 
 .portfolio h2 {
@@ -665,6 +665,11 @@ body.mobile-nav-active #mobile-nav-toggle {
 .portfolio-grid .row > div .card:hover .portfolio-over {
   opacity: 1;
   visibility: visible;
+}
+
+.portfolio p{
+  font-size: 8px;
+  margin-top: 50px;
 }
 
 /* ==================================================
@@ -1004,6 +1009,10 @@ body.mobile-nav-active #mobile-nav-toggle {
   margin-bottom: 25px;
 }
 
+.about h3{
+  margin: 25px 25px;
+}
+
 .features a:link {
   color: black;
 }
@@ -1018,4 +1027,10 @@ body.mobile-nav-active #mobile-nav-toggle {
 
 .features a:active {
   color: #007bff;
+}
+
+button {
+  margin-top: 25px;
+  padding: 3px 8px;
+  background-color: #fff;
 }
