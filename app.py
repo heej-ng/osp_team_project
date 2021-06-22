@@ -41,17 +41,18 @@ def popular():
                            p6=list[6], p7=list[7], p8=list[8], p9=list[9], p10=list[10], p11=list[11], p12=list[12],
                            p13=list[13], p14=list[14])
 
-@app.route('/crawling_stock', methods=['POST'])
+@app.route('/crawling_stock')
 def crawling_stock():
 	stock_crawling()
+	return (''), 204
 
 @app.route('/stable', methods=['POST'])
-def aver():
+def aver_s():
 	stable_list=recom_algo('stable')
 	return render_template('stable.html', stable=stable_list)
 
 @app.route('/attack', methods=['POST'])
-def aver():
+def aver_a():
 	danger_list=recom_algo('danger')
 	return render_template('attack.html', attack=danger_list)
 
