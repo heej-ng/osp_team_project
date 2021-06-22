@@ -16,6 +16,7 @@ from bs4 import BeautifulSoup
 from stock_crawling import *
 from recom_algo import *
 
+from news_issue import *
 import matplotlib
 
 matplotlib.use('Agg')
@@ -26,9 +27,10 @@ import matplotlib.pyplot as plt
 
 app = Flask(__name__)
 
-
+top15={}
 @app.route('/')
 def popular():
+    top15 = news_issue()
     url = u'https://finance.naver.com/sise/lastsearch2.nhn'
     res = requests.get(url)
     html = BeautifulSoup(res.content, "html.parser")
@@ -39,7 +41,7 @@ def popular():
         list.append(x.text)
     return render_template('index.html', p0=list[0], p1=list[1], p2=list[2], p3=list[3], p4=list[4], p5=list[5],
                            p6=list[6], p7=list[7], p8=list[8], p9=list[9], p10=list[10], p11=list[11], p12=list[12],
-                           p13=list[13], p14=list[14])
+                           p13=list[13], p14=list[14], issues=", ".join(top15.keys()))
 
 @app.route('/crawling_stock')
 def crawling_stock():
