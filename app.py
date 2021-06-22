@@ -68,6 +68,8 @@ def detail(stock):
     # 주가, 전일대비, 거래량, 거래대금, 시가총액, 시가총액순위
     # 주가
     s1 = soup.find(class_="no_up").find(class_="blind").text
+    if (len(s1) == 0):
+        s1 = soup.find(class_="no_down").find(class_="blind").text
 
     #전일대비
     s2 = soup.find(class_="no_exday").find_all(class_="no_up")
@@ -143,4 +145,3 @@ def fig(stock):
 if __name__ == '__main__':
     ipaddr = "127.0.0.1"
     app.run(debug=False, host=ipaddr, port=5000)
-
