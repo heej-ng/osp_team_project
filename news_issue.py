@@ -35,8 +35,6 @@ def compute_idf(sent_list):
 
 def news_issue():
 	now = datetime.datetime.now()
-	newslink = []
-	newstitle = []
 	texttemp = []
 	textlist = []
 	sent_list = []
@@ -47,6 +45,7 @@ def news_issue():
 	okt = Okt()
 
 	for i in range(2): #오늘 많이 본 기사 끌어오기
+		newslink = []
 		datestr = now.strftime('%Y%m%d')
 		url = 'https://finance.naver.com/news/news_list.nhn?mode=RANK&date=' + datestr
 		res = requests.get(url)
@@ -80,19 +79,18 @@ def news_issue():
 			word_d = {}
 			idf_list = []
 			for k in j:	#한 줄
-#				hsent = hfilter(k)
-				wlist = mecab.nouns(k)
-#				wlist = okt.nouns(k)
+#				wlist = mecab.nouns(k)
+				wlist = okt.nouns(k)
 
 				for w in wlist:
-					mw = mecab.pos(w)
-					if w not in word_d and mw[0][1] == "NNP":
-#					if w not in word_d:
+#					mw = mecab.pos(w)
+#					if w not in word_d and mw[0][1] == "NNP":
+					if w not in word_d:
 						word_d[w] = 1
 						idf_list.append(w)
 						total_word[w] = 1
-					elif mw[0][1] == "NNP":
-#					else:
+#					elif mw[0][1] == "NNP":
+					else:
 						word_d[w] += 1
 						total_word[w] += 1
 
