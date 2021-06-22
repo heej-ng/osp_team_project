@@ -45,12 +45,12 @@ def day_stock_crawling(code):
             date.append(d.get_text())
             price.append(p.get_text())
 
-    print(date)
-    print('---------------')
-    print(price)
-    print("zzzz")
-    print(len(date))
-    print(len(price)) #490
+    #print(date)
+    #print('---------------')
+    #print(price)
+    #print("zzzz")
+    #print(len(date))
+    #print(len(price)) #490
 
     name=code_to_name[code]
     print(name)
