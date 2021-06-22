@@ -49,12 +49,12 @@ def crawling_stock():
 @app.route('/stable', methods=['POST'])
 def aver_s():
 	stable_list=recom_algo('stable')
-	return render_template('stable.html', stable=stable_list)
+	return render_template('stable.html', stable=", ".join(stable_list))
 
 @app.route('/attack', methods=['POST'])
 def aver_a():
 	danger_list=recom_algo('danger')
-	return render_template('attack.html', attack=danger_list)
+	return render_template('attack.html', attack=", ".join(danger_list))
 
 
 @app.route('/detail/<stock>')
