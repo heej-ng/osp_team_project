@@ -6,7 +6,6 @@ import re
 import requests
 from bs4 import BeautifulSoup, NavigableString
 from konlpy.tag import *
-from nltk import word_tokenize
 import datetime
 
 total_word = {}
