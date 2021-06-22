@@ -161,17 +161,21 @@
       <h2>
         종목 추천
       </h2>
+
       <form action= "/crawling_stock">
 	    	<button type="submit"> crawling_update </button>
     	</form>
+      <br>
 
 	    <form method="POST" action = "/stable">
 	    	<button type="submit"> 안정 성향</button>
 	    </form>
-	    <br/>
+
 	    <form method="POST" action= "/attack">
 		   <button type="submit"> 공격 성향 </button>
 	    </form>
+      
+      <p>*본 사이트에서 추천해주는 종목의 정확성이나 신뢰성에 대해 아무런 책임을 지지 않으니 이 점 유의바랍니다.</p>
       
     </div>
 
@@ -186,7 +190,7 @@
         증권 이슈
       </h2>
 
-      <br><br><h2>{{issues}}</h2><br><br><br>
+      <br><br><h3>{{issues}}</h3><br><br><br>
 
     </div>
   </section>
