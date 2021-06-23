@@ -3,6 +3,9 @@ Open Source Programming team project
  
 경북대학교 컴퓨터학부 오픈소스프로그래밍 8조
 
+Stock Trade Tool
+주식 분석 사이트
+
 사용 설명서
 
 1. team.sh 쉘 스크립트 파일을 실행하여 필요한 모듈을 다운받아야 합니다.
