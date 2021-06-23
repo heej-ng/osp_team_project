@@ -3,7 +3,7 @@ Open Source Programming team project
  
 경북대학교 컴퓨터학부 오픈소스프로그래밍 8조
 
-## Stock Trade Tool  
+## Stock Trade Tool
 주식 분석 사이트  
 
 리눅스 기반의 쉘스크립트, 파이썬, Flask 기반 웹서비스 입니다.  
