@@ -31,3 +31,6 @@ Open Source Programming team project
 4. 인기 검색 종목을 누르는 경우, 실시간으로 크롤링하여 주가 그래프 및 종목 정보를 출력하기 때문에 로딩 시간이 조금 걸리는 점 유의바랍니다.
 5. 종목 추천에서 crawling_update 버튼을 누르는 경우, 많은 종목을 크롤링하여 약 2만개의 데이터를 저장 및 분석하기 때문에 로딩 시간이 조금 걸리는 점 유의바랍니다. 현재 로딩 상황을 알고 싶다면 터미널 창에서 출력되는 데이터들를 통해 보고 알 수 있습니다.
 6. python, pip, Flask, elasticsearch 모듈은 쉘스크립트 실행동안 다운을 받으려면 너무 오랜 시간이 걸립니다. 또한 기본 기능으로 명시되어있기 때문에 이미 다운되어있음을 가정하고 별도의 다운 과정은 생략합니다.
+
+### 시연영상
+:movie_camera: [시연영상 다운링크](https://github.com/heej-ng/osp_team_project/blob/main/%EC%98%A4%ED%94%88%EC%86%8C%EC%8A%A4%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D_8%EC%A1%B0_%EC%8B%9C%EC%97%B0%EC%98%81%EC%83%81.zip)
