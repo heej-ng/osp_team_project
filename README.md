@@ -6,7 +6,7 @@ Open Source Programming team project
 ## Stock Trading Tool
 주식 분석 사이트  
 
-리눅스 기반의 쉘스크립트, 파이썬, Flask 기반 웹서비스 입니다.  
+리눅스 기반의 쉘스크립트, 파이썬, Flask, elasticsearch(NoSQL) 기반 웹서비스 입니다.  
 <br>
 
 ### 사용 설명서
